@@ -10,7 +10,6 @@ Digital Diary is an Android application that allows users to create, edit, and m
 
 - Add, edit, and delete diary entries
 - Attach images to entries from the gallery or camera
-- Draw on images with customizable brush size and color
 - Record and attach audio notes to entries
 - Automatically capture the user's location and display it on a map
 - Persist data locally using Room database
