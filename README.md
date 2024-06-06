@@ -19,7 +19,7 @@ Digital Diary is an Android application that allows users to create, edit, and m
 ## Screenshots
 
 ### Login Screen
-<img src="https://github.com/szwedzik/digital-diary/blob/main/images/add_activity.png" alt="Login Screen" width="300"/>
+<img src="https://github.com/szwedzik/digital-diary/blob/main/images/login_page.png" alt="Login Screen" width="300"/>
 
 ### Main Screen
 <img src="https://github.com/szwedzik/digital-diary/blob/main/images/main_activity.png" alt="Main Screen" width="300"/>
