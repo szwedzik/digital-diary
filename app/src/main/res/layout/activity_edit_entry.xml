@@ -1,0 +1,145 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Title EditText -->
+        <EditText
+            android:id="@+id/titleEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/title_hint"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Content EditText -->
+        <EditText
+            android:id="@+id/contentEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/content_hint"
+            android:inputType="textMultiLine"
+            android:layout_below="@id/titleEditText"
+            android:layout_marginBottom="8dp" />
+
+        <!-- ImageView for Image -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            android:layout_below="@id/contentEditText"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Buttons for Adding and Deleting Image -->
+        <LinearLayout
+            android:id="@+id/imageButtonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/imageView"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/addImageButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/add_image" />
+
+            <Button
+                android:id="@+id/deleteImageButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/delete_image"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- AudioView for Audio -->
+        <com.the8way.digitaldiary.ui.AudioPlayerView
+            android:id="@+id/audioPlayerView"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:visibility="gone"
+            android:layout_below="@id/imageButtonLayout"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Buttons for Adding and Deleting Audio -->
+        <LinearLayout
+            android:id="@+id/audioButtonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/audioPlayerView"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/addAudioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/add_audio" />
+
+            <Button
+                android:id="@+id/deleteAudioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/delete_audio"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- Location TextView -->
+        <TextView
+            android:id="@+id/locationTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/location"
+            android:layout_below="@id/audioButtonLayout"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Map Fragment -->
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/locationTextView"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Created Time TextView -->
+        <TextView
+            android:id="@+id/createdTimeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/created_at"
+            android:layout_below="@id/map"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Updated Time TextView -->
+        <TextView
+            android:id="@+id/updatedTimeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/updated_at"
+            android:visibility="gone"
+            android:layout_below="@id/createdTimeTextView"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/edit"
+            android:layout_below="@id/updatedTimeTextView"
+            android:layout_marginBottom="8dp" />
+    </RelativeLayout>
+</ScrollView>

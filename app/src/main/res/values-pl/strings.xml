@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dziennik Cyfrowy</string>
+    <string name="title_hint">Tytuł</string>
+    <string name="content_hint">Treść</string>
+    <string name="capture_image">Zachwyć Obraz</string>
+    <string name="capture_audio">Zachwyć Audio</string>
+    <string name="delete_image">Usuń Obraz</string>
+    <string name="delete_audio">Usuń Audio</string>
+    <string name="audio_stop_capture">Zatrzymaj Nagrywanie</string>
+    <string name="add_image">Dodaj Obraz</string>
+    <string name="add_audio">Dodaj Audio</string>
+    <string name="location">Lokalizacja: %s</string>
+    <string name="created_at">Utworzono: %s</string>
+    <string name="updated_at">Zaktualizowano: %s</string>
+    <string name="edit">Edytuj wpis</string>
+    <string name="pin_hint">Wprowadź PIN</string>
+    <string name="pin_length_error">PIN musi mieć od 4 do 10 cyfr</string>
+    <string name="pin_set">PIN ustawiony pomyślnie</string>
+    <string name="pin_mismatch">PIN-y nie pasują</string>
+    <string name="pin_confirm">Potwierdź swój PIN</string>
+    <string name="pin_incorrect">Nieprawidłowy PIN</string>
+    <string name="confirm_pin_hint">Potwierdź PIN</string>
+    <string name="login">Zaloguj się</string>
+    <string name="no_entries_message">Nie znaleziono wpisów. Aby zobaczyć swój wpis na tej stronie, utwórz nowy wpis</string>
+    <string name="title_required">Tytuł jest wymagany</string>
+    <string name="content_required">Treść jest wymagana</string>
+    <string name="diary_entry_saved">Wpis w dzienniku zapisany</string>
+    <string name="img_picker_title">Wybierz opcję</string>
+    <string name="img_picker_camera">Zrób zdjęcie</string>
+    <string name="img_picker_gallery">Wybierz z galerii</string>
+    <string name="perms_required">Wymagane Uprawnienia</string>
+    <string name="perms_required_desc">Ta aplikacja potrzebuje uprawnień do lokalizacji i audio, aby działać poprawnie.</string>
+    <string name="perms_required_grant">Udziel</string>
+    <string name="perms_required_deny">Odmów</string>
+    <string name="perms_denied">Uprawnienia Odmówione</string>
+    <string name="perms_audio_denied">Odmówiono uprawnienia do nagrywania audio</string>
+    <string name="location_unable">Nie można uzyskać aktualnej lokalizacji</string>
+    <string name="delete_confirmation">Czy na pewno chcesz usunąć ten wpis?</string>
+    <string name="delete">Usuń</string>
+    <string name="cancel">Anuluj</string>
+    <string name="app_add_entry">Dodaj wpis</string>
+    <string name="app_edit_entry">Edytuj wpis</string>
+    <string name="entry_deleted">Wpis został usunięty</string>
+</resources>
