@@ -46,7 +46,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="REPLACEME"/>
+            android:value="AIzaSyAAkJ9hkN1tcuKAnWgP4J75BnHIVNCy6lA"/>
 
         <provider
             android:name="androidx.core.content.FileProvider"
