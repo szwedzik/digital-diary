@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="https://github.com/szwedzik/digital-diary/blob/main/app/src/main/res/drawable/logo.png" alt="logo"/>
+</p>
+
 # Digital Diary
 
 Digital Diary is an Android application that allows users to create, edit, and manage diary entries with text, images, audio recordings, and location data. This project is developed using Kotlin, Dagger Hilt for dependency injection, Room for database management, and Google Maps API for location features. The application was created as part of the PRM (Mobile Programming) course at PJATK.
@@ -16,23 +20,29 @@ Digital Diary is an Android application that allows users to create, edit, and m
 ## Screenshots
 
 ### Login Screen
-![Login Screen](path/to/main_screen_screenshot.png)
+<img src="https://github.com/szwedzik/digital-diary/blob/main/images/add_activity.png" alt="Login Screen" width="300"/>
 
 ### Main Screen
-![Main Screen](path/to/main_screen_screenshot.png)
+<img src="https://github.com/szwedzik/digital-diary/blob/main/images/main_activity.png" alt="Main Screen" width="300"/>
 
 ### Add Entry
-![Add Entry](path/to/add_entry_screenshot.png)
+<img src="https://github.com/szwedzik/digital-diary/blob/main/images/add_activity.png" alt="Add Entry" width="300"/>
 
 ### Edit Entry
-![Edit Entry](path/to/edit_entry_screenshot.png)
+<img src="https://github.com/szwedzik/digital-diary/blob/main/images/edit_activity.png" alt="Edit Entry" width="300"/>
+<img src="https://github.com/szwedzik/digital-diary/blob/main/images/edit_activity_audio.png" alt="Edit Entry Audio" width="300"/>
+<img src="https://github.com/szwedzik/digital-diary/blob/main/images/edit_activity_image.png" alt="Edit Entry Images" width="300"/>
+
+### Delete Entry
+<img src="https://github.com/szwedzik/digital-diary/blob/main/images/delete_entry.png" alt="Delete Entry" width="300"/>
+
 
 
 ## Installation
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/digital-diary.git
+    git clone https://github.com/szwedzik/digital-diary.git
     ```
 
 2. Open the project in Android Studio.
@@ -168,7 +178,7 @@ object AppInitializer {
 Handles adding new diary entries, capturing images, recording audio, and fetching the user's current location.
 
 ### EditEntryActivity
-Allows users to edit existing diary entries, including updating text, images, audio recordings, and locations.
+Allows users to edit existing diary entries, including updating text, images, audio recordings.
 
 
 
