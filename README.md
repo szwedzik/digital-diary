@@ -1,6 +1,6 @@
 # Digital Diary
 
-Digital Diary is an Android application that allows users to create, edit, and manage diary entries with text, images, audio recordings, and location data. This project is developed using Kotlin, Dagger Hilt for dependency injection, Room for database management, and Google Maps API for location features.
+Digital Diary is an Android application that allows users to create, edit, and manage diary entries with text, images, audio recordings, and location data. This project is developed using Kotlin, Dagger Hilt for dependency injection, Room for database management, and Google Maps API for location features. The application was created as part of the PRM (Mobile Programming) course at PJATK.
 
 ## Features
 
@@ -11,8 +11,12 @@ Digital Diary is an Android application that allows users to create, edit, and m
 - Automatically capture the user's location and display it on a map
 - Persist data locally using Room database
 - Dependency injection using Dagger Hilt
+- PIN code setup and authentication to secure the application
 
 ## Screenshots
+
+### Login Screen
+![Login Screen](path/to/main_screen_screenshot.png)
 
 ### Main Screen
 ![Main Screen](path/to/main_screen_screenshot.png)
@@ -23,8 +27,6 @@ Digital Diary is an Android application that allows users to create, edit, and m
 ### Edit Entry
 ![Edit Entry](path/to/edit_entry_screenshot.png)
 
-### Draw on Image
-![Draw on Image](path/to/draw_on_image_screenshot.png)
 
 ## Installation
 
@@ -43,12 +45,12 @@ Digital Diary is an Android application that allows users to create, edit, and m
 
 - Android Studio Arctic Fox or later
 - Android SDK 30 or later
-- Google Maps API key (add to `AndroidManifest.xml` file) and replace `REPLACEME` with your API key:
-    ```xml
-    <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="REPLACEME"/>
-    ```
+- Google Maps API key (add to `AndroidManifest.xml` file):
+```xml
+<meta-data
+    android:name="com.google.android.geo.API_KEY"
+    android:value="YOUR_GOOGLE_MAPS_API_KEY"/>
+```
 
 ## Dependencies
 
@@ -97,23 +99,27 @@ object AppModule {
     }
 }
 ```
-### Initializing Sample Data
 
+## Initializing Sample Data
 We initialize the database with sample data to showcase the application's functionality.
-
 ```kotlin
 object AppInitializer {
 
     fun initializeDatabase(context: Context) {
         val database = DiaryEntryDatabase.getDatabase(context)
         val diaryEntryDao = database.diaryEntryDao()
+        val pinDao = database.pinDao()
+
 
         CoroutineScope(Dispatchers.IO).launch {
-            diaryEntryDao.clearAll()
+
+            diaryEntryDao.deleteAllEntries()
+            pinDao.deleteAllPins()
+
             val initialEntries = listOf(
                 DiaryEntry(
-                    title = "Welcome to Digital Diary",
-                    content = "This is a sample entry to welcome you to Digital Diary. You can add your own entries by clicking on the + button below.",
+                    title = "Warsaw #1",
+                    content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in ex mollis, placerat erat et, lobortis enim. Sed vitae ante venenatis, consequat eros vel, laoreet odio. Donec tincidunt felis in semper vehicula. Sed id finibus erat, vel dignissim erat. Mauris ullamcorper lectus a dui elementum blandit. Nulla eget ornare enim. Maecenas a dui augue. Nunc laoreet mattis arcu, a scelerisque leo. Sed in urna in risus imperdiet accumsan sed ut nulla. Vivamus quis nibh enim. Aenean dignissim ornare lectus, sit amet suscipit turpis accumsan vitae. Pellentesque euismod, nisl sit amet porta tempus, magna odio semper ex, sit amet gravida velit nibh vitae eros. Aliquam nisi est, pellentesque in semper venenatis, lacinia vitae orci.",
                     imageUri = "",
                     audioUri = "",
                     latitude = 52.237049,
@@ -122,12 +128,32 @@ object AppInitializer {
                     updatedTime = null
                 ),
                 DiaryEntry(
-                    title = "Sample Entry",
-                    content = "This is a sample entry. You can edit this entry by clicking on it.",
+                    title = "New York #1",
+                    content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in ex mollis, placerat erat et, lobortis enim. Sed vitae ante venenatis, consequat eros vel, laoreet odio. Donec tincidunt felis in semper vehicula. Sed id finibus erat, vel dignissim erat. Mauris ullamcorper lectus a dui elementum blandit. Nulla eget ornare enim. Maecenas a dui augue. Nunc laoreet mattis arcu, a scelerisque leo. Sed in urna in risus imperdiet accumsan sed ut nulla. Vivamus quis nibh enim. Aenean dignissim ornare lectus, sit amet suscipit turpis accumsan vitae. Pellentesque euismod, nisl sit amet porta tempus, magna odio semper ex, sit amet gravida velit nibh vitae eros. Aliquam nisi est, pellentesque in semper venenatis, lacinia vitae orci.",
                     imageUri = "",
                     audioUri = "",
                     latitude = 40.758896,
                     longitude = -73.985130,
+                    createdTime = Date().time,
+                    updatedTime = null
+                ),
+                DiaryEntry(
+                    title = "Moscow #1",
+                    content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in ex mollis, placerat erat et, lobortis enim. Sed vitae ante venenatis, consequat eros vel, laoreet odio. Donec tincidunt felis in semper vehicula. Sed id finibus erat, vel dignissim erat. Mauris ullamcorper lectus a dui elementum blandit. Nulla eget ornare enim. Maecenas a dui augue. Nunc laoreet mattis arcu, a scelerisque leo. Sed in urna in risus imperdiet accumsan sed ut nulla. Vivamus quis nibh enim. Aenean dignissim ornare lectus, sit amet suscipit turpis accumsan vitae. Pellentesque euismod, nisl sit amet porta tempus, magna odio semper ex, sit amet gravida velit nibh vitae eros. Aliquam nisi est, pellentesque in semper venenatis, lacinia vitae orci.",
+                    imageUri = "",
+                    audioUri = "",
+                    latitude = 55.751244,
+                    longitude = 37.618423,
+                    createdTime = Date().time,
+                    updatedTime = null
+                ),
+                DiaryEntry(
+                    title = "Washington DC #1",
+                    content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in ex mollis, placerat erat et, lobortis enim. Sed vitae ante venenatis, consequat eros vel, laoreet odio. Donec tincidunt felis in semper vehicula. Sed id finibus erat, vel dignissim erat. Mauris ullamcorper lectus a dui elementum blandit. Nulla eget ornare enim. Maecenas a dui augue. Nunc laoreet mattis arcu, a scelerisque leo. Sed in urna in risus imperdiet accumsan sed ut nulla. Vivamus quis nibh enim. Aenean dignissim ornare lectus, sit amet suscipit turpis accumsan vitae. Pellentesque euismod, nisl sit amet porta tempus, magna odio semper ex, sit amet gravida velit nibh vitae eros. Aliquam nisi est, pellentesque in semper venenatis, lacinia vitae orci.",
+                    imageUri = "",
+                    audioUri = "",
+                    latitude = 38.894207,
+                    longitude = -77.035507,
                     createdTime = Date().time,
                     updatedTime = null
                 )
@@ -144,6 +170,11 @@ Handles adding new diary entries, capturing images, recording audio, and fetchin
 ### EditEntryActivity
 Allows users to edit existing diary entries, including updating text, images, audio recordings, and locations.
 
+
+
+## PIN Code Setup and Authentication
+The application includes functionality to set up and authenticate using a PIN code on the first launch to secure the app from unauthorized access.
+
 ## Permissions
 The application requires the following permissions:
 
@@ -152,7 +183,6 @@ The application requires the following permissions:
 - CAMERA
 - RECORD_AUDIO
 Permissions are requested at runtime for devices running Android M (API 23) or later.
-- 
 ```kotlin
 private fun checkPermissions() {
     if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
@@ -165,8 +195,7 @@ private fun checkPermissions() {
     }
 }
 ```
-
-# Contributing
+## Contributing
 1. Fork the repository
 2. Create your feature branch (git checkout -b feature/my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
